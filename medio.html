@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Medio</title>
+        <link rel="stylesheet" href="./css/medio.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="game-container">
+            <h1>Nivel Medio</h1>
+        
+            <p id="level">Nivel: 1</p>
+            <p id="score">Puntaje: 0</p>
+            <p id="moves">Movimientos: 0</p>
+            <p id="message"></p>
+        
+            <div id="game-board" class="game-board"></div>
+
+            <div id="button-container">
+                <button onclick="nextLevel()" id="next-level"
+                    style="display:none;">Siguiente</button>
+                <button id="volver"
+                    onclick="window.location.href='dificultad.html'">Volver</button>
+
+                <button id="restart-button" onclick="restartGame()">Reintentar</button>
+            </div>
+
+        </div>
+        
+        <script src="./js/medio.js"></script>
+    </body>
+</html>

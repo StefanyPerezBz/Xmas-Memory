@@ -1,0 +1,103 @@
+body {
+  background: url("../assets/background.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#game-container {
+  max-width: 800px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); 
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  animation: fadeIn 1s ease-out;
+}
+
+#game-container h1 {
+  font-size: 3em;
+  margin-bottom: 50px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#game-container button {
+  background-color: #02ac4e; 
+  color: #fff;
+  font-family: "Press Start 2P", cursive; 
+  font-size: 1.2em;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* Efecto hover */
+#game-container button:hover {
+  background-color: #029a47; 
+  transform: translateY(-5px); 
+}
+
+#game-container button:active {
+  transform: translateY(2px); 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #game-container {
+    width: 90%; 
+    padding: 20px;
+  }
+
+  #game-container h1 {
+    font-size: 2.5em; 
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    gap: 15px; 
+  }
+
+  #game-container button {
+    font-size: 1.2em; 
+    padding: 15px 30px; 
+  }
+}
+
+@media (max-width: 480px) {
+  #game-container h1 {
+    font-size: 2em; 
+  }
+
+  #game-container button {
+    font-size: 1em; 
+    padding: 10px 20px;
+  }
+}

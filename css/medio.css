@@ -1,0 +1,229 @@
+body {
+  font-family: "Press Start 2P", cursive; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url("../assets/snow-background.png") no-repeat center center
+    fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+#game-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  min-height: 80vh; 
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 6px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsivo */
+  grid-gap: 15px;
+  justify-content: center;
+  margin-top: 6px;
+  padding: 20px;
+  width: 100%;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #4caf50; 
+  border: 3px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: #66bb6a; 
+}
+
+.card img {
+  width: 80%;
+  height: 80%;
+  display: none; 
+}
+
+.card.flipped img {
+  display: block; 
+}
+
+button {
+  display: block; 
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 0 #8b0000;
+  width: 100%;
+  max-width: 200px; 
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #e53935;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #8b0000;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #8b0000;
+}
+
+button::before {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#next-level,
+#restart-button,
+#volver {
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 15px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+#button-container button {
+  padding: 10px 20px;
+  background-color: #d32f2f; 
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive; 
+  border-radius: 10px;
+  box-shadow: 0 4px 0 #8b0000; 
+  transition: all 0.2s ease;
+}
+
+#button-container button:hover {
+  background-color: #e53935;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 0 #8b0000;
+}
+
+#button-container button:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 0 #8b0000;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  #game-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(80px, 1fr)
+    );
+  }
+
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+
+  #button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #button-container button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+  }
+
+  #game-container {
+    width: 95%;
+    margin: 10px auto;
+    padding: 5px;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(70px, 1fr)
+    ); 
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+
+  #button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #button-container button {
+    width: 100%;
+    max-width: none;
+  }
+}
