@@ -1,5 +1,5 @@
 body {
-  background: url("../assets/background.png") no-repeat center center fixed;
+  background: url("../assets/background.webp") no-repeat center center fixed;
   background-size: cover;
   font-family: "Press Start 2P", cursive;
   margin: 0;
@@ -15,7 +15,7 @@ body {
   width: 90%;
   padding: 20px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(10, 1, 1, 0.7);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
@@ -35,11 +35,11 @@ body {
 }
 
 #landing-container button {
-  background-color: #02ac4e;
+  background-color: #db221c;
   color: #fff;
   font-family: "Press Start 2P", cursive;
-  font-size: 1.5em;
-  padding: 20px 40px;
+  font-size: 1.3em;
+  padding: 20px 20px;
   border: none;
   cursor: pointer;
   position: relative;
@@ -51,7 +51,7 @@ body {
 }
 
 #landing-container button:hover {
-  background-color: #05a139;
+  background-color: #cc3530;
   transform: translateY(-5px);
 }
 

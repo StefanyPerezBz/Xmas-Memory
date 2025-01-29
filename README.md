@@ -4,7 +4,7 @@ Un mágico juego de memoria navideño donde la diversión y los recuerdos se enc
 ---
 
 <p align="center">
-  <img src="./preview.png" alt="Vista previa del juego" width="400"/>
+  <img src="./vista.png" alt="Vista previa del juego" width="400"/>
 </p>
 
 ---
@@ -12,7 +12,7 @@ Un mágico juego de memoria navideño donde la diversión y los recuerdos se enc
 ## ⭐​Demo
 
 <p align="center">
-  <img src="assets/demo.gif" alt="Demostración del juego" width="400"/>
+  <img src="assets/demostracion.gif" alt="Demostración del juego" width="400"/>
 </p>
 
 ---

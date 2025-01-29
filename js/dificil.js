@@ -30,12 +30,10 @@ const cardImages = [
     'assets/reno.png'
 ];
 
-// Función para barajar un arreglo
 function shuffledArray(array) {
     return array.sort(() => Math.random() - 0.5); 
 }
 
-// Crear el tablero con las cartas
 function createBoard() {
     gameBoard.innerHTML = '';  
 
@@ -45,7 +43,6 @@ function createBoard() {
     let doubledCards = [...cards, ...cards]; 
     doubledCards = shuffledArray(doubledCards); 
 
-    // Crea las cartas en el tablero
     for (let i = 0; i < doubledCards.length; i++) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -61,7 +58,6 @@ function createBoard() {
     }
 }
 
-// Función para voltear las cartas
 function flipCard(event) {
     const card = event.target.closest('.card');
     if (flippedCards.length === 2 || card.classList.contains('flipped')) return;
@@ -81,8 +77,7 @@ function flipCard(event) {
             matchedPairs++;
             flippedCards = [];
             if (matchedPairs === totalPairs) {
-                // Ahora sumamos 5 puntos por nivel
-                score += 15;  // Aumento de 5 en 5
+                score += 15;  
 
                 scoreDisplay.textContent = `Puntaje: ${score}`;
                 messageDisplay.textContent = `¡Nivel ${currentLevel} ganado!`;
@@ -107,7 +102,6 @@ function flipCard(event) {
     }
 }
 
-// Función para avanzar al siguiente nivel
 function nextLevel() {
     if (currentLevel < 5) {
         currentLevel++;
@@ -122,7 +116,6 @@ function nextLevel() {
     }
 }
 
-// Función para reiniciar el juego
 function restartGame() {
     currentLevel = 1; 
     matchedPairs = 0;

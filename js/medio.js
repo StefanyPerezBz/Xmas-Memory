@@ -1,10 +1,10 @@
 let moves = 0;
 let flippedCards = [];
 let matchedPairs = 0;
-let currentLevel = 1; // Nivel inicial
-let totalPairs = 3; // Comienza con 3 pares (6 cartas)
-let score = 0; // Puntaje total
-let levelScores = []; // Arreglo para almacenar el puntaje de cada nivel
+let currentLevel = 1;
+let totalPairs = 3; 
+let score = 0; 
+let levelScores = []; 
 
 const gameBoard = document.getElementById('game-board');
 const movesDisplay = document.getElementById('moves');
@@ -30,23 +30,19 @@ const cardImages = [
     'assets/reno.png'
 ];
 
-// Función para barajar el arreglo de cartas
 function shuffledArray(array) {
-    return array.sort(() => Math.random() - 0.5); // Baraja el arreglo aleatoriamente
+    return array.sort(() => Math.random() - 0.5); 
 }
 
-// Crear el tablero con las cartas
 function createBoard() {
-    gameBoard.innerHTML = '';  // Limpia el tablero antes de crear uno nuevo
+    gameBoard.innerHTML = '';  
 
-    // Crea una nueva copia de las cartas disponibles para este nivel
     let cards = [...cardImages];
-    cards = cards.slice(0, totalPairs); // Toma solo las imágenes necesarias para este nivel
+    cards = cards.slice(0, totalPairs); 
 
-    let doubledCards = [...cards, ...cards]; // Duplica las cartas para crear pares
-    doubledCards = shuffledArray(doubledCards); // Baraja las cartas de manera aleatoria
+    let doubledCards = [...cards, ...cards]; 
+    doubledCards = shuffledArray(doubledCards); 
 
-    // Crea las cartas en el tablero
     for (let i = 0; i < doubledCards.length; i++) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -57,12 +53,11 @@ function createBoard() {
         img.alt = 'Carta';
         card.appendChild(img);
 
-        card.addEventListener('click', flipCard);  // Evento para voltear las cartas
+        card.addEventListener('click', flipCard);  
         gameBoard.appendChild(card);
     }
 }
 
-// Función para voltear las cartas
 function flipCard(event) {
     const card = event.target.closest('.card');
     if (flippedCards.length === 2 || card.classList.contains('flipped')) return;
@@ -82,7 +77,6 @@ function flipCard(event) {
             matchedPairs++;
             flippedCards = [];
             if (matchedPairs === totalPairs) {
-                // Asignar puntaje fijo según el nivel
                 switch (currentLevel) {
                     case 1:
                         score = 10;
@@ -126,28 +120,25 @@ function flipCard(event) {
     }
 }
 
-// Función para avanzar al siguiente nivel
 function nextLevel() {
     if (currentLevel < 5) {
         currentLevel++;
         matchedPairs = 0;
-        totalPairs = 3 + (currentLevel - 1) * 2; // Aumenta de 2 en 2 los pares en cada nivel (6, 9, 12, 15, 18)
+        totalPairs = 3 + (currentLevel - 1) * 2; 
         moves = 0;
         movesDisplay.textContent = `Movimientos: ${moves}`;
         levelDisplay.textContent = `Nivel: ${currentLevel}`;
         messageDisplay.textContent = '';
         nextLevelButton.style.display = 'none';
         
-        // El puntaje ya está fijo por nivel, no se debe sumar más al puntaje
-        createBoard();  // Crea un nuevo tablero para el siguiente nivel
+        createBoard();  
     }
 }
 
-// Función para reiniciar el juego
 function restartGame() {
     currentLevel = 1; 
     matchedPairs = 0;
-    totalPairs = 3; // Comienza con 3 pares
+    totalPairs = 3;
     score = 0;
     levelScores = [];
     moves = 0;
@@ -157,8 +148,7 @@ function restartGame() {
     messageDisplay.textContent = '';
     nextLevelButton.style.display = 'none';
     restartButton.style.display = 'none';
-    createBoard();  // Crea un nuevo tablero al reiniciar el juego
+    createBoard();  
 }
 
-// Inicializa el tablero al cargar
 createBoard();

@@ -3,7 +3,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background: url("../assets/snow-background.png") no-repeat center center
+  background: url("../assets/snow-background.webp") no-repeat center center
     fixed;
   background-size: cover;
   color: #fff;
@@ -30,7 +30,7 @@ h1 {
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsivo */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
   grid-gap: 15px;
   justify-content: center;
   margin-top: 6px;

@@ -1,7 +1,7 @@
 body {
-  background: url("../assets/background.png") no-repeat center center fixed;
+  background: url("../assets/background.webp") no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ body {
   max-width: 800px;
   padding: 30px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   color: white;
@@ -24,7 +24,7 @@ body {
   font-size: 3em;
   margin-bottom: 50px;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .button-container {
@@ -34,35 +34,71 @@ body {
   align-items: center;
 }
 
-#game-container button {
-  background-color: #02ac4e; 
+.button-container #inicio {
+  background-color: #e92b09;
   color: #fff;
-  font-family: "Press Start 2P", cursive; 
+  font-family: "Press Start 2P", cursive;
   font-size: 1.2em;
-  padding: 15px 30px;
+  padding: 15px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.2s ease, background-color 0.3s ease;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Efecto hover */
+.button-container #inicio:hover {
+  background: linear-gradient(145deg, #c54933, #dd3a16);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(233, 43, 9, 0.4);
+}
+
+#game-container button {
+  background-color: #02ac4e;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2em;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
 #game-container button:hover {
-  background-color: #029a47; 
-  transform: translateY(-5px); 
+  background: linear-gradient(145deg, #029a47, #027f3d);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(2, 172, 78, 0.4);
 }
 
 #game-container button:active {
-  transform: translateY(2px); 
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(2, 172, 78, 0.2);
+}
+
+#game-container button::before {
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#game-container button:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translateY(-50%);
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   100% {
     opacity: 1;
@@ -71,33 +107,73 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
   #game-container {
-    width: 90%; 
-    padding: 20px;
+    padding: clamp(15px, 4vw, 30px);
+    width: 90%;
   }
 
   #game-container h1 {
-    font-size: 2.5em; 
+    font-size: 2.5em;
     margin-bottom: 30px;
   }
 
   .button-container {
-    gap: 15px; 
+    gap: 15px;
   }
 
   #game-container button {
-    font-size: 1.2em; 
-    padding: 15px 30px; 
+    width: 100%;
+    background: linear-gradient(145deg, #02ac4e, #029045);
+    color: #fff;
+    font-family: "Press Start 2P", cursive;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    padding: clamp(12px, 2.5vw, 20px) clamp(20px, 4vw, 40px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(2, 172, 78, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (max-height: 600px) {
+  #game-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #game-container h1 {
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #game-container {
+    padding: clamp(10px, 3vw, 20px);
+  }
+
   #game-container h1 {
-    font-size: 2em; 
+    font-size: 2em;
   }
 
   #game-container button {
-    font-size: 1em; 
+    font-size: 1em;
     padding: 10px 20px;
   }
 }
