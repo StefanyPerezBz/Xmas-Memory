@@ -16,18 +16,18 @@ const nextLevelButton = document.getElementById('next-level');
 
 const cardImages = [
     'assets/arbol.png', 
-    'assets/baston.png', 
     'assets/cascabel.png', 
     'assets/chompa.png', 
-    'assets/decoracion.png', 
+    'assets/decoracion.png',
+    'assets/baston.png', 
+    'assets/santa.png', 
     'assets/estrella.png', 
-    'assets/gorro.png',
     'assets/media_verde.png',
     'assets/media.png', 
     'assets/regalo.png',
+    'assets/gorro.png',
     'assets/regalo2.png',
     'assets/reno.png',
-    'assets/santa.png',
 ];
 
 function shuffledArray(array) {

@@ -15,19 +15,19 @@ const restartButton = document.getElementById('restart-button');
 const nextLevelButton = document.getElementById('next-level');
 
 const cardImages = [
-    'assets/arbol.png', 
-    'assets/baston.png', 
-    'assets/cascabel.png', 
+    'assets/baston.png',
+    'assets/regalo2.png', 
+    'assets/cascabel.png',
+    'assets/media.png',  
     'assets/chompa.png', 
     'assets/decoracion.png', 
     'assets/estrella.png', 
     'assets/gorro.png',
     'assets/media_verde.png',
-    'assets/media.png', 
     'assets/regalo.png',
-    'assets/regalo2.png',
     'assets/reno.png',
     'assets/santa.png',
+    'assets/arbol.png', 
 ];
 
 function shuffledArray(array) {
